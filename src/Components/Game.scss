@@ -1,0 +1,85 @@
+.Game {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    width: 15rem;
+    &-header {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    &-thumb {
+        flex: 1;
+        margin: 0 1rem 0 0;
+        background: #333;
+        padding: .5rem;
+        text-align: center;
+    }
+    &-title {
+        flex: 2;
+        font-weight: bold;
+        font-size: 11pt;
+        margin: 0;
+        margin-bottom: .5rem;
+    }
+    &-description {
+        word-wrap: break-word;
+        flex: 1;
+        max-width: 20rem;
+    }
+    &-labels {
+        font-size: 8pt;
+        display: flex;
+        margin: 0 0 .5rem;
+        flex-wrap: wrap;
+        span {
+            padding: .5rem;
+            border-radius: 5%;
+            margin: 0 .5rem .5rem 0;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        &-year, &-rank {
+            border: 1px solid black;
+        }
+        &-expansion {
+            background-color: #44d;
+            color: white;
+        }
+        &-players {
+            background-color: #d44;
+            color: white;
+        }
+        &-rank {
+            // background-color: #aaf;
+        }
+        &-rating {
+            background-color: #ddd;
+            color: white;
+            &--very-high {
+                background-color: #0c0;
+            }
+            &--high {
+                background-color: #090;
+            }
+            &--med-high {
+                background-color: #790;
+            }
+            &--med {
+                background-color: #970;
+            }
+            &--low {
+                background-color: #700;
+            }
+        }
+        &-playtime {
+            background-color: #099;
+            color: white;
+        }
+    }
+}
+.Games-list {
+    &>.Game {
+        margin-bottom: 1rem;
+    }
+}

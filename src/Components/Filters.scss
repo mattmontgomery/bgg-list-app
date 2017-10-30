@@ -1,0 +1,15 @@
+.Games {
+    display: flex;
+    &-filters {
+        width: 15rem;
+        margin-right: 1rem;
+    }
+}
+
+.Filter {
+    display: flex;
+    margin-bottom: .5rem;
+    &-label {
+        flex: 1;
+    }
+}
