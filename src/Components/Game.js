@@ -48,7 +48,9 @@ export default class Game extends PureComponent
                 </div>
                 <div className="Game-header">
                     <div className="Game-thumb"><img alt={this.props.name} src={this.props.thumbnail} /></div>
-                    <h3 className="Game-title">{this.props.name}</h3>
+                    <h3 className="Game-title">
+                        <a href={`https://boardgamegeek.com/boardgame/${this.props.gameId}`} target="_blank">{this.props.name}</a>
+                    </h3>
                 </div>
                 {/* <div className="Game-description">{JSON.stringify(this.props)}</div> */}
             </div>

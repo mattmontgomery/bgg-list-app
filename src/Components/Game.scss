@@ -20,6 +20,14 @@
         font-size: 11pt;
         margin: 0;
         margin-bottom: .5rem;
+        color: #339;
+        a {
+            color: inherit;
+            text-decoration: none;
+            &:hover {
+                color: #55f;
+            }
+        }
     }
     &-description {
         word-wrap: break-word;
