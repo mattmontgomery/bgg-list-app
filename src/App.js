@@ -51,6 +51,8 @@ class App extends Component {
               <Filter defaultChecked label="Owned" onChange={this.handleFilter} name="owned" mode="bool" type="checkbox" />
               <Filter label="Want to play" onChange={this.handleFilter} name="wantToPlay" mode="bool" type="checkbox" />
               <Filter label="Want to buy" onChange={this.handleFilter} name="wantToBuy" mode="bool" type="checkbox" />
+              <Filter label="> Num. plays" onChange={this.handleFilter} name="numPlays" mode="gte" type="number"/>
+              <Filter label="< Num. plays" onChange={this.handleFilter} name="numPlays" mode="lte" type="number"/>
               <form onSubmit={this.handleSubmit} ref={e => this.form = e}>
                 <input type="text" name="username" ref={e => this.username = e} defaultValue="moonty" />
                 <input type="submit" value="Fetch" />

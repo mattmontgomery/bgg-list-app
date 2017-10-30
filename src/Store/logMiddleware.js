@@ -3,12 +3,29 @@ export default function logMiddleware(store) {
         return function (action) {
             const beforeState = store.getState();
             next(action);
-            console.log(action.type, action.payload, {
-                beforeState: beforeState.toJS(),
-                afterState: store.getState().toJS()
-            });
-            // next(action);
-            // console.log(action);
+            console.groupCollapsed(
+                `%cAction:%c ${action.type}`,
+                'font-weight: bold; text-decoration: underline;',
+                'color: blue;'
+            );
+
+            console.log(
+                '%cpayload:',
+                'font-weight: bold',
+                action.payload
+            )
+
+            console.log(
+                '%cbefore: ',
+                'font-weight: bold;',
+                beforeState.toJS()
+            );
+            console.log(
+                '%cafter:  ',
+                'font-weight: bold;',
+                store.getState().toJS()
+            )
+            console.groupEnd();
         }
     }
 }

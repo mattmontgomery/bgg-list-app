@@ -33,6 +33,9 @@
         word-wrap: break-word;
         flex: 1;
         max-width: 20rem;
+        padding: .5rem 0;
+        font-size: 10pt;
+        color: #333;
     }
     &-labels {
         font-size: 8pt;

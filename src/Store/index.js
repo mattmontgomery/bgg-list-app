@@ -8,7 +8,7 @@ const rootReducer = combineReducers(reducers);
 
 const store = createStore(
     rootReducer,
-    applyMiddleware(logMiddleware, apiMiddleware)
+    applyMiddleware(apiMiddleware, logMiddleware)
 );
 
 window.store = store;
