@@ -6,9 +6,11 @@ export default class Filter extends PureComponent
 {
     static propTypes = {
         defaultChecked: PropTypes.bool,
+        filter: PropTypes.string,
         label: PropTypes.string,
         mode: PropTypes.oneOf([
             'bool',
+            'custom',
             'exact',
             'gte',
             'loose',
@@ -30,11 +32,21 @@ export default class Filter extends PureComponent
                 <input
                     defaultChecked={this.props.defaultChecked}
                     defaultValue={this.props.value}
+                    name={this.props.name}
                     onChange={ev => this.props.onChange(
                         this.props.name,
                         this.props.mode,
-                        this.props.type === 'checkbox' ? ev.target.checked : ev.target.value
+                        this.props.mode === 'custom' ? this.props.filter : (
+                            this.props.mode === 'bool' ? ev.target.checked : ev.target.value
+                        )
                     )}
+                    onClick={this.props.type === 'radio' ? ev => this.props.onChange(
+                        this.props.name,
+                        this.props.mode,
+                        this.props.mode === 'custom' ? this.props.filter : (
+                            this.props.mode === 'bool' ? ev.target.checked : ev.target.value
+                        )
+                    ) : null}
                     type={this.props.type}
                 />
             </div>

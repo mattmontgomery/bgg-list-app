@@ -4,6 +4,10 @@ const initialState = Map({
     owned: {
         type: 'bool',
         value: true
+    },
+    isExpansion: {
+        type: 'custom',
+        value: 'expansions-off'
     }
 });
 

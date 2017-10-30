@@ -18,14 +18,7 @@ export default class Game extends PureComponent
         return (
             <div className="Game">
                 <div className="Game-labels">
-                    <span className="Game-labels-year">{'📅 '}{this.props.yearPublished}</span>
-                    <span className="Game-labels-players">
-                        {'👫 '}
-                        {this.props.minPlayers}
-                        {this.props.maxPlayers !== this.props.minPlayers ? ` to ${this.props.maxPlayers}` : null}
-                        {' players'}
-                    </span>
-                    {this.props.rank > 0 ? <span className="Game-labels-rank">{'# '}{this.props.rank}</span> : null}
+                    {this.props.isExpansion ? <span className="Game-labels-expansion">{'⚙️ Expansion'}</span> : null}
                     <span
                         className={classnames("Game-labels-rating", {
                             'Game-labels-rating--very-high': this.props.averageRating >= 8,
@@ -35,6 +28,19 @@ export default class Game extends PureComponent
                             'Game-labels-rating--low': this.props.averageRating < 5,
                         })}
                     >{'👍 '}{this.round(this.props.averageRating, 2)}</span>
+                    <span className="Game-labels-year">{'📅 '}{this.props.yearPublished}</span>
+                    <span
+                        className={classnames("Game-labels-plays", {
+                            'Game-labels-plays--unplayed': !this.props.numPlays,
+                        })}
+                    >{'🎲 '}{this.props.numPlays ? this.props.numPlays : 'Unplayed'}</span>
+                    <span className="Game-labels-players">
+                        {'👫 '}
+                        {this.props.minPlayers}
+                        {this.props.maxPlayers !== this.props.minPlayers ? ` to ${this.props.maxPlayers}` : null}
+                        {' players'}
+                    </span>
+                    {this.props.rank > 0 ? <span className="Game-labels-rank">{'📈 #'}{this.props.rank}</span> : null}
                     <span
                         className={classnames("Game-labels-playtime", {
                             'Game-labels-playtime--very-high': this.props.playingTime >= 120,
@@ -44,7 +50,6 @@ export default class Game extends PureComponent
                             'Game-labels-playtime--low': this.props.playingTime < 30,
                         })}
                     >{'⏰ - '}{this.props.playingTime}</span>
-                    {this.props.isExpansion ? <span className="Game-labels-expansion">{'⚙️ Expansion'}</span> : null}
                 </div>
                 <div className="Game-header">
                     <div className="Game-thumb"><img alt={this.props.name} src={this.props.thumbnail} /></div>

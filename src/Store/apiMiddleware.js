@@ -8,7 +8,7 @@ export default function apiMiddleware(store) {
                 if (action.type === Games.GAMES_LOAD) {
                     // check local storage cache
                     const stored = checkLocalStorage('games');
-                    if(stored && !stored.error) {
+                    if(stored && !stored.error && !stored.message) {
                         next({
                             type: Games.GAMES_LOADED,
                             payload: stored
