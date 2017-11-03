@@ -1,0 +1,65 @@
+.Game-labels {
+    font-size: 8pt;
+    display: flex;
+    margin: 0 0 .5rem;
+    flex-wrap: wrap;
+    span {
+        padding: .25rem .5rem;
+        border-radius: 5%;
+        margin: .25rem;
+        border-width: 1px;
+        border-style: solid;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    &-expansion {
+        background-color: #44d;
+        color: white;
+    }
+    &-players {
+        border-color: #090;
+        color: #090;
+        background-color: white;
+    }
+    &-year {
+        background-color: white;
+    }
+    &-rank {
+        border-color: #66f;
+        color: #66f;
+        background-color: white;
+    }
+    &-rating {
+        background-color: #ddd;
+        color: white;
+        &--very-high {
+            background-color: #0c0;
+        }
+        &--high {
+            background-color: #090;
+        }
+        &--med-high {
+            background-color: #790;
+        }
+        &--med {
+            background-color: #970;
+        }
+        &--low {
+            background-color: #700;
+        }
+    }
+    &-playtime {
+        border-color: #099;
+        color: #099;
+        background-color: white;
+    }
+    &-plays {
+        border-color: #900;
+        color: #900;
+        background-color: white;
+        &--unplayed {
+            color: #f00;
+        }
+    }
+}

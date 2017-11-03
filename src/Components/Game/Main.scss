@@ -1,0 +1,20 @@
+.Game {
+    &-main {
+        display: flex;
+        &-image {
+            flex: 1;
+            img {
+                max-width: 100%;
+            }
+            padding: 1rem;
+            background: #333;
+        }
+    }
+    &-details {
+        padding: 1rem;
+        flex: 1;
+        h3 {
+            margin: 0 0 1rem 0;
+        }
+    }
+}
